@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  green_gear_db:
+    image: postgres:12
+    container_name: green_gear_db
+    environment:
+      - POSTGRES_DB=green_gear_db
+      - POSTGRES_USER=green_gear_user
+      - POSTGRES_PASSWORD=passwd
+  green_gear_api:
+    container_name: green_gear_api
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "8000:8000"
+    depends_on:
+      - green_gear_db
+    environment:
+      - POSTGRES_DB=green_gear_db
+      - POSTGRES_USER=green_gear_user
+      - POSTGRES_PASSWORD=passwd
+      - POSTGRES_HOST=green_gear_db

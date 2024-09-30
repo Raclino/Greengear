@@ -1,0 +1,13 @@
+**/*.yaml
+**/*.yml
+**/*.yaml.gotmpl
+**/*.lock
+**/Dockerfile
+**/.env
+**/.env.*
+**/*.log
+**/node_modules
+**/*.sh
+**/*.md
+**/.next
+**/styles/fonts/**

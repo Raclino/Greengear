@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Office</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- <div class="navbar">
+        <a href="/users">Users</a>
+        <a href="/gardens">Gardens</a>
+        <a href="/plants">Plants</a>
+        <a href="/sensors">Sensors</a>
+        <a href="/hub">Hub</a>
+    </div> -->
+
+    <section id="users-section" class="data-section">
+        <h2>Liste des Utilisateurs</h2>
+        <input type="text" class="search-input" placeholder="Rechercher un utilisateur..." onkeyup="searchInTable(this, 'users')">
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom d'utilisateur</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Rôle</th>
+                    <th>Photo de profil</th>
+                    <th>Créé le</th>
+                    <th>Mis à jour le</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes du tableau seront générées ici -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="gardens-section" class="data-section">
+        <h2>Liste des Jardins</h2>
+        <input type="text" class="search-input" placeholder="Rechercher un jardin..." onkeyup="searchInTable(this, 'gardens')">
+        <table id="gardens-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom du Jardin</th>
+                    <th>Créé le</th>
+                    <th>Mis à jour le</th>
+                    <th>Photo du jardin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes du tableau seront générées ici -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="hub-section" class="data-section">
+        <h2>Liste des Hubs</h2>
+        <button type="action" onclick="creerNouveauHub()">Créer un nouveau HUB</button>
+        <button type="action" onclick="importerHubsDepuisCSV()">Importer des HUB depuis un CSV</button>
+        <input type="text" class="search-input" placeholder="Rechercher un hub..." onkeyup="searchInTable(this, 'Hub')">
+        <table id="hub-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Version</th>
+                    <th>Token</th>
+                    <th>Créé le</th>
+                    <th>Mis à jour le</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes du tableau seront générées ici -->
+            </tbody>
+        </table>
+    </section>
+
+</body>
+<script>
+    const token = "<%= token %>";
+</script>
+<script src="/js/backOffice.js"></script>
+</html>

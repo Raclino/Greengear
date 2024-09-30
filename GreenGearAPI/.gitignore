@@ -1,0 +1,19 @@
+# Node modules and dependencies
+node_modules/
+
+# Built JavaScript files
+build/
+
+# TypeScript build output
+dist/
+
+# Log files
+*.log
+
+# Environment files
+.env
+
+# User-specific files
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,180 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    overflow: hidden;
+    background-color: #333;
+    padding: 14px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0 15px; /* Ajoute un espace équilibré autour des liens */
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+form {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    margin: 10px 0 5px;
+    display: block;
+    color: #666;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+button[type="action"] {
+    background-color: #4c9eaf;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="action"]:hover {
+    background-color: #4c84af;
+}
+.container {
+    padding: 20px;
+}
+
+a {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #45a049;
+}
+
+.data-section {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+.data-section:first-child {
+    margin-top: 60px; /* Ajustez cette valeur pour qu'elle corresponde à la hauteur de votre navbar */
+}
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    margin-right: 10px;
+    width: calc(100% - 120px);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th, .data-table td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Élimine l'espace entre les bordures des cellules */
+    margin-bottom: 20px; /* Espacement entre les tableaux */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Bordure autour de chaque cellule */
+    padding: 8px; /* Espacement à l'intérieur de chaque cellule */
+    text-align: left; /* Alignement du texte */
+}
+
+th {
+    background-color: #4CAF50; /* Couleur de fond pour les en-têtes */
+    color: white; /* Couleur du texte pour les en-têtes */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Couleur de fond pour les lignes paires */
+}
+
+tr:hover {
+    background-color: #ddd; /* Couleur de fond au survol d'une ligne */
+    cursor: pointer; /* Change le curseur pour indiquer que la ligne est cliquable */
+}

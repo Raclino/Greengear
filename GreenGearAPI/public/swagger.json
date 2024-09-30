@@ -1,0 +1,992 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "GreenGear API",
+		"version": "1.0.0",
+		"contact": {}
+	},
+	"servers": [
+		{
+			"url": "http://localhost"
+		}
+	],
+	"paths": {
+		"/api/users": {
+			"get": {
+				"tags": [
+					"Users"
+				],
+				"summary": "Get All Users",
+				"description": "Get All Users",
+				"operationId": "getAllUsers",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"Users"
+				],
+				"summary": "Create User",
+				"description": "Create User",
+				"operationId": "createUser",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"example": "testuser@example.com"
+									},
+									"first_name": {
+										"type": "string",
+										"example": "Test"
+									},
+									"last_name": {
+										"type": "string",
+										"example": "User"
+									},
+									"password": {
+										"type": "string",
+										"example": "password123"
+									},
+									"role": {
+										"type": "string",
+										"example": "user"
+									},
+									"username": {
+										"type": "string",
+										"example": "testuser"
+									}
+								}
+							},
+							"example": {
+								"email": "testuser@example.com",
+								"first_name": "Test",
+								"last_name": "User",
+								"password": "password123",
+								"role": "user",
+								"username": "testuser"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/users/{user_id}": {
+			"get": {
+				"tags": [
+					"Users"
+				],
+				"summary": "Get User By ID",
+				"description": "Get User By ID",
+				"operationId": "getUserById",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"Users"
+				],
+				"summary": "Update User",
+				"description": "Update User",
+				"operationId": "updateUser",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"example": "testuser@example.comupdate"
+									},
+									"first_name": {
+										"type": "string",
+										"example": "Testupdate"
+									},
+									"last_name": {
+										"type": "string",
+										"example": "Userupdate"
+									},
+									"password": {
+										"type": "string",
+										"example": "password123update"
+									},
+									"role": {
+										"type": "string",
+										"example": "user"
+									},
+									"username": {
+										"type": "string",
+										"example": "testuser update"
+									}
+								}
+							},
+							"example": {
+								"email": "testuser@example.comupdate",
+								"first_name": "Testupdate",
+								"last_name": "Userupdate",
+								"password": "password123update",
+								"role": "user",
+								"username": "testuser update"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Users"
+				],
+				"summary": "Delete User",
+				"description": "Delete User",
+				"operationId": "deleteUser",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "user_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": ""
+					}
+				}
+			]
+		},
+		"/api/login": {
+			"post": {
+				"tags": [
+					"Users"
+				],
+				"summary": "Login",
+				"description": "Login",
+				"operationId": "login",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"password": {
+										"type": "string",
+										"example": "password123"
+									},
+									"username": {
+										"type": "string",
+										"example": "testuser"
+									}
+								}
+							},
+							"example": {
+								"password": "password123",
+								"username": "testuser"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/gardens": {
+			"get": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Get All Gardens",
+				"description": "Get All Gardens",
+				"operationId": "getAllGardens",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Create Garden",
+				"description": "Create Garden",
+				"operationId": "createGarden",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"garden_name": {
+										"type": "string",
+										"example": "My Garden 2"
+									}
+								}
+							},
+							"example": {
+								"garden_name": "My Garden 2"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/gardens/{garden_id}": {
+			"get": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Get Garden By ID",
+				"description": "Get Garden By ID",
+				"operationId": "getGardenById",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Update Garden",
+				"description": "Update Garden",
+				"operationId": "updateGarden",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"garden_name": {
+										"type": "string",
+										"example": "My Garden2"
+									},
+									"userId": {
+										"type": "number",
+										"example": 2
+									}
+								}
+							},
+							"example": {
+								"garden_name": "My Garden2",
+								"userId": 2
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Delete Garden",
+				"description": "Delete Garden",
+				"operationId": "deleteGarden",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "garden_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": ""
+					}
+				}
+			]
+		},
+		"/api/gardens/users/{user_id}": {
+			"get": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Get All Gardens For User ID",
+				"description": "Get All Gardens For User ID",
+				"operationId": "getAllGardensForUserId",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/gardens/{garden_id}/hub": {
+			"get": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Get Garden Hub",
+				"description": "Get Garden Hub",
+				"operationId": "getGardenHub",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "garden_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": "1"
+					}
+				}
+			]
+		},
+		"/api/gardens/{garden_id}/sensor": {
+			"get": {
+				"tags": [
+					"Gardens"
+				],
+				"summary": "Get All Sensors in Garden",
+				"description": "Get All Sensors in Garden",
+				"operationId": "getAllSensorsInGarden",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "garden_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": ""
+					}
+				}
+			]
+		},
+		"/api/plants": {
+			"post": {
+				"tags": [
+					"Plants"
+				],
+				"summary": "Create Plant",
+				"description": "Create Plant",
+				"operationId": "createPlant",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"gardenId": {
+										"type": "number",
+										"example": 1
+									},
+									"plant_description": {
+										"type": "string",
+										"example": "e"
+									},
+									"plant_name": {
+										"type": "string",
+										"example": "Saladqweqqweqweqweaaaaaaaaaaaaaawe"
+									}
+								}
+							},
+							"example": {
+								"gardenId": 1,
+								"plant_description": "e",
+								"plant_name": "Saladqweqqweqweqweaaaaaaaaaaaaaawe"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/plants/garden/{gardenId}": {
+			"get": {
+				"tags": [
+					"Plants"
+				],
+				"summary": "Get all Plants from Garden",
+				"description": "Get all Plants from Garden",
+				"operationId": "getAllPlantsFromGarden",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "gardenId",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": "1"
+					}
+				}
+			]
+		},
+		"/api/plants/{plantId}": {
+			"put": {
+				"tags": [
+					"Plants"
+				],
+				"summary": "Update Plant",
+				"description": "Update Plant",
+				"operationId": "updatePlant",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"plant_name": {
+										"type": "string",
+										"example": "Updated Rose"
+									}
+								}
+							},
+							"example": {
+								"plant_name": "Updated Rose"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Plants"
+				],
+				"summary": "Delete Plant",
+				"description": "Delete Plant",
+				"operationId": "deletePlant",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "plantId",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": "1"
+					}
+				}
+			]
+		},
+		"/api/sensors/": {
+			"post": {
+				"tags": [
+					"Sensors"
+				],
+				"summary": "Create sensor",
+				"description": "Create sensor",
+				"operationId": "createSensor",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"hub_id": {
+										"type": "string",
+										"example": "1"
+									},
+									"sensor_name": {
+										"type": "string",
+										"example": "Humidity sensor 2"
+									},
+									"sensor_token": {
+										"type": "string",
+										"example": "test-token"
+									},
+									"sensor_type": {
+										"type": "string",
+										"example": "humidity"
+									}
+								}
+							},
+							"example": {
+								"hub_id": "1",
+								"sensor_name": "Humidity sensor 2",
+								"sensor_token": "test-token",
+								"sensor_type": "humidity"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/sensors/:{sensor_id}": {
+			"get": {
+				"tags": [
+					"Sensors"
+				],
+				"summary": "Get Sensor by ID",
+				"description": "Get Sensor by ID",
+				"operationId": "getSensorById",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Sensors"
+				],
+				"summary": "Delete Sensor",
+				"description": "Delete Sensor",
+				"operationId": "deleteSensor",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "sensor_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": ""
+					}
+				}
+			]
+		},
+		"/api/sensors/hub/{hub_id}": {
+			"get": {
+				"tags": [
+					"Sensors"
+				],
+				"summary": "Get all Sensors in Hub",
+				"description": "Get all Sensors in Hub",
+				"operationId": "getAllSensorsInHub",
+				"requestBody": {
+					"content": {
+						"text/plain": {
+							"example": ""
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "hub_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": "1"
+					}
+				}
+			]
+		},
+		"/api/sensors/{sensor_id}": {
+			"put": {
+				"tags": [
+					"Sensors"
+				],
+				"summary": "Update Sensor",
+				"description": "Update Sensor",
+				"operationId": "updateSensor",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"hubId": {
+										"type": "string",
+										"example": "2"
+									},
+									"sensor_name": {
+										"type": "string",
+										"example": "Humidity sensor"
+									},
+									"sensor_type": {
+										"type": "string",
+										"example": "humidity"
+									}
+								}
+							},
+							"example": {
+								"hubId": "2",
+								"sensor_name": "Humidity sensor",
+								"sensor_type": "humidity"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "sensor_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": ""
+					}
+				}
+			]
+		},
+		"/api/hub/": {
+			"post": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Create Hub",
+				"description": "Create Hub",
+				"operationId": "createHub",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"garden_id": {
+										"type": "number",
+										"example": 1
+									},
+									"hub_name": {
+										"type": "string",
+										"example": "Hub#2"
+									},
+									"hub_token": {
+										"type": "string",
+										"example": "test_token"
+									},
+									"hub_version": {
+										"type": "string",
+										"example": "0.0.1"
+									}
+								}
+							},
+							"example": {
+								"garden_id": 1,
+								"hub_name": "Hub#2",
+								"hub_token": "test_token",
+								"hub_version": "0.0.1"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/hub/all": {
+			"get": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Get Hub for User",
+				"description": "Get Hub for User",
+				"operationId": "getHubForUser",
+				"requestBody": {
+					"content": {
+						"text/plain": {
+							"example": ""
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		},
+		"/api/hub/{hub_id}": {
+			"get": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Get Hub by ID",
+				"description": "Get Hub by ID",
+				"operationId": "getHubById",
+				"requestBody": {
+					"content": {
+						"text/plain": {
+							"example": ""
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Update Hub",
+				"description": "Update Hub",
+				"operationId": "updateHub",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"hub_name": {
+										"type": "string",
+										"example": "Hub#2qwe"
+									},
+									"hub_token": {
+										"type": "string",
+										"example": "test_token"
+									},
+									"hub_version": {
+										"type": "string",
+										"example": "0.0.1"
+									}
+								}
+							},
+							"example": {
+								"hub_name": "Hub#2qwe",
+								"hub_token": "test_token",
+								"hub_version": "0.0.1"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Delete Hub",
+				"description": "Delete Hub",
+				"operationId": "deleteHub",
+				"requestBody": {
+					"content": {
+						"text/plain": {
+							"example": ""
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "hub_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": ""
+					}
+				}
+			]
+		},
+		"/api/hub/{hub_id}/sensors": {
+			"get": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Get Hub Sensors",
+				"description": "Get Hub Sensors",
+				"operationId": "getHubSensors",
+				"requestBody": {
+					"content": {
+						"text/plain": {
+							"example": ""
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "hub_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": "1"
+					}
+				}
+			]
+		},
+		"/api/hub/{hub_id}/gardens": {
+			"get": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Get Hub Gardens",
+				"description": "Get Hub Gardens",
+				"operationId": "getHubGardens",
+				"requestBody": {
+					"content": {
+						"text/plain": {
+							"example": ""
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			},
+			"parameters": [
+				{
+					"name": "hub_id",
+					"in": "path",
+					"required": true,
+					"schema": {
+						"type": "string",
+						"example": "1"
+					}
+				}
+			]
+		},
+		"/api/hub/link-garden": {
+			"put": {
+				"tags": [
+					"Hub"
+				],
+				"summary": "Link Hub to Garden",
+				"description": "Link Hub to Garden",
+				"operationId": "linkHubToGarden",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"garden_id": {
+										"type": "string",
+										"example": "2"
+									},
+									"hub_id": {
+										"type": "string",
+										"example": "1"
+									}
+								}
+							},
+							"example": {
+								"garden_id": "2",
+								"hub_id": "1"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				}
+			}
+		}
+	},
+	"tags": [
+		{
+			"name": "Users"
+		},
+		{
+			"name": "Gardens"
+		},
+		{
+			"name": "Plants"
+		},
+		{
+			"name": "Sensors"
+		},
+		{
+			"name": "Hub"
+		}
+	]
+}

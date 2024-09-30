@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du hub</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Détails du hub</h1>
+    <form action="/hubs/<%= hub.id %>">
+        <div>
+            <label for="hub_name">Nom du hub:</label>
+            <input type="text" id="hub_name" name="hub_name" value="<%= hub.hub_name %>" required>
+        </div>
+        <div>
+            <label for="version">Version du hub:</label>
+            <input type="text" id="version" name="version" value="<%= hub.hub_version %>" required>
+        </div>        
+        <div>
+            <label for="token" >Token du hub:</label>
+            <p id="token" name="token"><%= hub.hub_token %></p>
+        </div>
+        <button type="submit" name="action" value="update">Modifier</button>
+        <button type="submit" name="action" value="delete">Supprimer</button>
+    </form>
+</body>
+<script>
+    const token = "<%= token %>";
+</script>
+<script src="/js/hubDetails.js"></script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du jardin</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Détails du jardin</h1>
+    <form action="/gardens/<%= garden.id %>">
+        <div>
+            <label for="garden_name">Nom du jardin:</label>
+            <input type="text" id="garden_name" name="garden_name" value="<%= garden.garden_name %>" required>
+        </div>
+        <button type="submit" name="action" value="update">Modifier</button>
+        <button type="submit" name="action" value="delete">Supprimer</button>
+    </form>
+</body>
+<script>
+    const token = "<%= token %>";
+</script>
+<script src="/js/gardenDetails.js"></script>
+</html>

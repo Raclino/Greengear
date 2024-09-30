@@ -1,0 +1,13 @@
+mqtt:
+  host: "mosquitto"
+  port: 1883
+  topics:
+    - "connect/token"
+    - "sensor/humidity"
+
+HUB:
+  NAME: "Zeus"
+  VESION: "1.2"
+  TOKEN: "4822f41a7fc6955a105e8e367e8d8eeb"
+
+API_ADDRESS: "http://192.168.1.13:8000/api/"

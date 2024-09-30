@@ -1,0 +1,28 @@
+{
+  "name": "GreenGear",
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "name": "GreenGear",
+    "slug": "GreenGear",
+    "android": {
+      "config": {
+        "usesCleartextTraffic": true
+      }
+    },
+    "ios":{
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true,
+          "NSIncludesSubdomains": true,
+          "NSTemporaryExceptionAllowsInsecureHTTPLoads": true
+        }
+      }
+    }
+  }
+}

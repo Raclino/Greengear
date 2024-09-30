@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'utilisateur</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Détails de l'utilisateur</h1>
+    <form action="/users/<%= user.id %>">
+        <img src="http://localhost:8000/<%= user.imagePath %>" width="200px" height="200px">
+        <div>
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" id="username" name="username" value="<%= user.username %>" required>
+        </div>
+        <div>
+            <label for="firstName">Prénom:</label>
+            <input type="text" id="firstName" name="firstName" value="<%= user.first_name %>" required>
+        </div>
+        <div>
+            <label for="lastName">Nom:</label>
+            <input type="text" id="lastName" name="lastName" value="<%= user.last_name %>" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= user.email %>" required>
+        </div>
+        <div>
+            <label for="role">Rôle:</label>
+            <input type="text" id="role" name="role" value="<%= user.role %>" required>
+        </div>
+        <button type="submit" name="action" value="update">Modifier</button>
+        <button type="submit" name="action" value="delete">Supprimer</button>
+    </form>
+</body>
+<script>
+    const token = "<%= token %>";
+</script>
+<script src="/js/userDetails.js"></script>
+</html>

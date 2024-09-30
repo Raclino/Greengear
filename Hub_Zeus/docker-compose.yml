@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    container_name: broker_mqtt
+    build: ./MQTT
+    ports:
+      - "1883:1883"
+      - "8883:8883"
+    volumes:
+      - ./MQTT:/mosquitto/config
+      - ./MQTT/data:/mosquitto/data
+      - ./MQTT/log:/mosquitto/log
+    depends_on:
+      - wifi_server
+    restart: unless-stopped
+
+  python_manager:
+    container_name: python_manager
+    build: ./Manageur
+    volumes:
+      - ./Manageur:/app
+    depends_on:
+      - mosquitto
+    restart: unless-stopped
+
+  wifi_server:
+    container_name: wifi_server
+    build: ./Serveur
+    image: ghcr.io/raspap/raspap-docker:latest
+    privileged: true
+    network_mode: "host"
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    restart: unless-stopped
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
