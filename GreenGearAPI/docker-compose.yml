@@ -12,7 +12,7 @@ services:
     container_name: green_gear_api
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: ./Dockerfile.dev
     volumes:
       - ./src:/app/src
     ports:
