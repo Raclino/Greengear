@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: ~/GreenGearAPI/Dockerfile.dev
     volumes:
-      - ~/GreenGearAPI/src:/app/src
+      - ./src:/app/src
     ports:
       - "8000:8000"
     depends_on:
