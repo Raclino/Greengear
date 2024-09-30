@@ -12,9 +12,9 @@ services:
     container_name: green_gear_api
     build:
       context: .
-      dockerfile: ./Dockerfile.dev
+      dockerfile: ~/GreenGearAPI/Dockerfile.dev
     volumes:
-      - ./src:/app/src
+      - ~/GreenGearAPI/src:/app/src
     ports:
       - "8000:8000"
     depends_on:
